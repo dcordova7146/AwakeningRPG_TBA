@@ -1,7 +1,7 @@
 package Game;
 
-import People.Person;
-import Rooms.MyRoom;
+import Players.Player;
+import Rooms.Ambush;
 import Rooms.Room;
 import Rooms.WinningRoom;
 
@@ -30,6 +30,7 @@ public class Runner {
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x, y);
 
+		//Creates a random Ambush tile
 		int xCoorMR = (int)(Math.random()*building.length);
 		int yCoorMR = (int)(Math.random()*building.length);
 		if(x == xCoorMR){
@@ -38,10 +39,13 @@ public class Runner {
 		if(y == yCoorMR){
 			yCoorMR = (int)(Math.random()*building.length);
 		}
-		building[xCoorMR][yCoorMR] = new MyRoom(xCoorMR,yCoorMR);
+		building[xCoorMR][yCoorMR] = new Ambush(xCoorMR,yCoorMR);
+
+		//Creates a random Shop tile
+
 
 		 //Setup player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0,0);
+		Player player1 = new Player("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
@@ -69,7 +73,7 @@ public class Runner {
 	 * @param map the 2D array of rooms
 	 * @return
 	 */
-	public static boolean validMove(String move, Person p, Room[][] map)
+	public static boolean validMove(String move, Player p, Room[][] map)
 	{
 		move = move.toLowerCase().trim();
 		switch (move) {

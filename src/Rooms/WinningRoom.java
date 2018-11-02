@@ -1,7 +1,7 @@
 package Rooms;
 
 import Game.Runner;
-import People.Person;
+import Players.Player;
 
 public class WinningRoom extends Room
 {
@@ -13,15 +13,15 @@ public class WinningRoom extends Room
 
 	/**
 	 * Triggers the game ending conditions.
-	 * @param x the Person entering
+	 * @param x the Player entering
 	 */
 	@Override
-	public void enterRoom(Person x) {
+	public void enterRoom(Player x) {
 
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		System.out.println("You found the winning room! Ten points for Gryffindor.");
+		System.out.println("You found the winning room!");
 		Runner.gameOff();
 	}
 	

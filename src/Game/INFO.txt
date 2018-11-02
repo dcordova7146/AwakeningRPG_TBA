@@ -1,0 +1,40 @@
+This shall be printed when the command guide is typed into the command line.
+THis is going to be a basic dungeon game where you at the beginning you choose a difficulty and based on the difficulty the map becomes bigger thus making the game slighty harder
+Difficulty levels-
+it will ask for you age and based on it you get a difficulty in the game
+Baby mode - 5x5 board
+Tween mode - 6x6 board
+Almost Adult mode - 7x7 board
+Adult mode - 8x8 board
+
+in the beginning of the game you will start on a random corner of the board and try to make your way to another random corner hoping for a win
+undecided on how map will print out
+Follow the directions to learn how to move thru the dungeon
+ _ _ _ _ _
+|XXXXXXXXX|     ?   ?   ?   ?   ?
+|XXXXXXXXX|     ?   ?   ?   ?   ?
+|XXXXXXXXX|     ?   ?   ?   ?   ?
+|XXXXXXXXX|     ?   ?   ?   ?   ?
+|_ _ _ _ _|     ?   ?   ?   ?   ?
+
+Along the way of getting to the other corner you will be ambushed by monsters or find a shop where you can buy abilities or buy potions,
+These events are in the room class but i might change it to be "events" and these will be event tiles
+event tiles are
+Ambush this tile will send the player into battle against a monster
+Shop this tile will send the player into a shop where they can purchase a potion, ability or sell what is in their current inventory
+Luck this tile will either damage the player, heal the player, or give them a random consumable
+Altar this tile will grant the player a wish which will increase one of their 3 stats up by 2 points in exchange for a holy item
+
+final event tiles, the corner tiles which are special
+Aside from the starting location of the player the other 3 corners will lead to two separate events either you win the game by escaping the dungeon if the dungeon key is found(maybe)
+Boss this tile will send the player into a difficult battle against a boss monster
+Exit this tile will win the game
+
+In this game you will play as yourself or whatever character you imagine
+You can customize yourself or your imaginary oc by choosing one of 3 classes still undecided on what they are
+Most likey going to be
+Hero
+
+
+
+
