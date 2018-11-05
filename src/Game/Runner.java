@@ -45,9 +45,13 @@ public class Runner {
 
 
 		 //Setup player 1 and the input scanner
-		Player player1 = new Player("FirstName", "FamilyName", 0,0);
-		building[0][0].enterRoom(player1);
+		System.out.println("Which class are you?(Type in the full name as seen to receive their respective stats and a description of that classes' playstyle.");
+		System.out.print("There are 5 classes to choose \n Villager, Hero, Thief, Mage, Knight");
 		Scanner in = new Scanner(System.in);
+		if(in.nextLine().e)
+		Player player = new Player("FirstName", "FamilyName", 0,0);
+		building[0][0].enterRoom(player1);
+
 		while(gameOn)
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
