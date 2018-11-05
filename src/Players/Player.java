@@ -4,8 +4,7 @@ package Players;
  * Player represents the player as they move through the game.
  */
 public class Player {
-	String firstName;
-	String familyName;
+	String playerName;
 	int heatlhPoints;
 	int attackMod;
 	int defenseMod;
@@ -29,10 +28,9 @@ public class Player {
 		this.yLoc = yLoc;
 	}
 
-	public Player(String firstName, String familyName, int healthPoints, int attackMod, int defenseMod, int evadeMod,int xLoc, int yLoc)
+	public Player(String playerName,int healthPoints, int attackMod, int defenseMod, int evadeMod,int xLoc, int yLoc)
 	{
-		this.firstName = firstName;
-		this.familyName = familyName;
+		this.playerName = playerName;
 		this.attackMod = attackMod;
 		this.defenseMod = defenseMod;
 		this.evadeMod = evadeMod;

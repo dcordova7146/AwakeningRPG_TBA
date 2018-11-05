@@ -1,6 +1,8 @@
 package Game;
 
+import Players.Hero;
 import Players.Player;
+import Players.Villager;
 import Rooms.Ambush;
 import Rooms.Room;
 import Rooms.WinningRoom;
@@ -14,7 +16,7 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
-		Room[][] building = new Room[5][5];
+		Room[][] building = new Room[10][10];
 		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
@@ -45,10 +47,31 @@ public class Runner {
 
 
 		 //Setup player 1 and the input scanner
-		System.out.println("Which class are you?(Type in the full name as seen to receive their respective stats and a description of that classes' playstyle.");
+		System.out.println("Which class are you?(Type in the full name as seen to receive their respective stats and a description of that class.");
 		System.out.print("There are 5 classes to choose \n Villager, Hero, Thief, Mage, Knight");
 		Scanner in = new Scanner(System.in);
-		if(in.nextLine().e)
+		String chosenClass = in.nextLine();
+		if(chosenClass.contains("villager")) {
+			System.out.println("The villager class is the most basic of all 5 classes, with no decent armor or strong weapon the villagers only good quality is his speed. \n Stats: \n HP: 8 \n ATTK: 0 \n DEF: 0 \n EVA: +1 \n The villagers awakening is a bonus 5 Health points");
+			System.out.println("Are you sure you want to choose the villager?(Type in yes if so, no if no)");
+			if (in.nextLine().contains("yes")) {
+				Player player = new Player("Villager", Villager.healthPoints, Villager.attackMod, Villager.defenseMod, Villager.evadeMod, );
+			}
+		}
+		if(chosenClass.contains("hero")) {
+			System.out.println("The hero class is all about strength with more hp and strength than the rest of the classes however his huge sword denies him the mobility to evade most attacks. \n Stats: \n HP: 9 \n ATTK: +3 \n DEF: +1 \n EVA: -3 \n The heroes awakening is a buff to his attack and defend modifiers at the cost of more evade loss");
+			System.out.println("Are you sure you want to choose the Hero?(Type in yes if so, no if no)");
+			if (in.nextLine().contains("yes")) {
+				Player player = new Player("Hero", Hero.healthPoints, Hero.attackMod, Hero.defenseMod, Hero.evadeMod, );
+			}
+		}
+		if(chosenClass.contains("thief")){
+			System.out.println("The thief class is not very heroic but is much faster than the rest of the classes however to move that fast he sacrifices heavy armor so dont expect him to take to many hits. \n Stats: \n HP: 6 \n ATTK: -1 \n DEF: 0 \n EVA: +4 \n The thief's awakening is a buff to his attack and evade modifiers");
+			System.out.println("Are you sure you want to choose the Thief?(Type in yes if so, no if no");
+			if(in.nextLine().contains("yes")){
+				Player player = new Player("Thief",)
+			}
+		}
 		Player player = new Player("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
 
