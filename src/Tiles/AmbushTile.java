@@ -1,4 +1,5 @@
 package Tiles;
+import Players.Enemy;
 import Players.Player;
 import Players.Enemies.Goblin;
 import Players.Enemies.Skeleton;
@@ -23,10 +24,17 @@ public class AmbushTile extends Tile {
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
         int eRNG = (int)(Math.random() * 3);
+        Enemy enemy = new Enemy("",0,0,0,0);
         if(eRNG == 0){
-
+            enemy = new Enemy(Goblin.enemyName,Goblin.healthPoints,Goblin.attackMod,Goblin.defenseMod,Goblin.evadeMod);
         }
-        System.out.println("You have been AMBUSHED by " +  randomEnemy + " prepare to FIGHT");
+        if(eRNG == 1){
+            enemy = new Enemy(Skeleton.enemyName,Skeleton.healthPoints,Skeleton.attackMod,Skeleton.defenseMod,Skeleton.evadeMod);
+        }
+        if(eRNG == 2){
+            enemy = new Enemy(Slime.enemyName,Slime.healthPoints,Slime.attackMod,Slime.defenseMod,Slime.evadeMod);
+        }
+        System.out.println("You have been AMBUSHED by " + ENEMYNAME PLACE HOLDER  + " prepare to FIGHT");
     }
 
 }

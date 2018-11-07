@@ -3,7 +3,7 @@ package Players;
 /**
  * Player represents the player as they move through the game.
  */
-public class Player {
+public class Player implements Battle{
 	Consumable[] inventory = new Consumable[10];
 	String playerName;
 	int healthPoints;
@@ -38,6 +38,22 @@ public class Player {
 		this.healthPoints = healthPoints;
 		this.xLoc = xLoc;
 		this.yLoc = yLoc;
+	}
+	public int defend(Enemy enemy){
+		int defendRoll = 0;
+		defendRoll = rollDice() + enemy.defenseMod;
+		return defendRoll;
+	}
+	public int evade(Enemy enemy){
+		int evadeRoll = 0;
+		evadeRoll = rollDice() + enemy.evadeMod;
+		return evadeRoll;
+	}
+
+	public int rollDice(){
+		int roll = 0;
+		roll = (int)((Math.random() * 6) + 1);
+		return roll;
 	}
 
 	public void heal(int howMuch){
