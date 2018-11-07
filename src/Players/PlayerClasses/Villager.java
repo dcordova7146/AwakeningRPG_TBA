@@ -1,4 +1,4 @@
-package Players;
+package Players.PlayerClasses;
 
 public class Villager {
     public static int healthPoints = 8;

@@ -1,4 +1,4 @@
-package Players;
+package Players.PlayerClasses;
 
 public class Hero {
     public static int healthPoints = 9;

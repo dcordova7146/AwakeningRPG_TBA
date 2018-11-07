@@ -12,6 +12,7 @@ public class Room {
 		yLoc = y;
 	}
 
+
 	/**
 	 * Method controls the results when a person enters this room.
 	 * @param x the Player entering
@@ -32,5 +33,6 @@ public class Room {
 	{
 		occupant = null;
 	}
-	
+
+
 }

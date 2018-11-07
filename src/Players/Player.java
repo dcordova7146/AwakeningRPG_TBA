@@ -4,8 +4,9 @@ package Players;
  * Player represents the player as they move through the game.
  */
 public class Player {
+	Consumable[] inventory = new Consumable[10];
 	String playerName;
-	int heatlhPoints;
+	int healthPoints;
 	int attackMod;
 	int defenseMod;
 	int evadeMod;
@@ -34,10 +35,25 @@ public class Player {
 		this.attackMod = attackMod;
 		this.defenseMod = defenseMod;
 		this.evadeMod = evadeMod;
-		this.heatlhPoints = healthPoints;
+		this.healthPoints = healthPoints;
 		this.xLoc = xLoc;
 		this.yLoc = yLoc;
 	}
+
+	public void heal(int howMuch){
+		//update so you cant go overboard
+		//maybe include a max health points var
+		healthPoints += 5;
+	}
+	//eat is confusing ask for help should the param for eat be the item or the person it is being used on maybe both?
+	public void consume(int itemIndex){
+		if(!(inventory[itemIndex] == null)){
+			inventory[itemIndex].eat(this);
+			inventory[itemIndex] = null;
+		}
+	}
+
+
 
 
 }

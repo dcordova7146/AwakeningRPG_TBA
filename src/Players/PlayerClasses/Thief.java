@@ -1,4 +1,4 @@
-package Players;
+package Players.PlayerClasses;
 
 public class Thief {
     public static int healthPoints = 6;
