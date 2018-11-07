@@ -1,12 +1,12 @@
-package Rooms;
+package Tiles;
 
 import Players.Player;
 
-public class Room {
+public class Tile {
 	Player occupant;
 	int xLoc,yLoc;
 	
-	public Room(int x, int y)
+	public Tile(int x, int y)
 	{
 		xLoc = x;
 		yLoc = y;

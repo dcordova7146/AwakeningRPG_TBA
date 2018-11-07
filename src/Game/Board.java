@@ -1,18 +1,18 @@
 package Game;
 
-import Rooms.Room;
+import Tiles.Tile;
 
 public class Board {
-    private Room[][] rooms;
-    public Board(Room[][] rooms){
-        this.rooms = rooms;
+    private Tile[][] tiles;
+    public Board(Tile[][] tiles){
+        this.tiles = tiles;
     }
     public Board(int height,int width ){
-        rooms = new Room[height][width];
+        tiles = new Tile[height][width];
     }
     public void printBoard(){
-        for(Room[] i : rooms){
-            for(Room j : i){
+        for(Tile[] i : tiles){
+            for(Tile j : i){
                 System.out.print(j);
             }
         }
@@ -20,9 +20,9 @@ public class Board {
     @Override
     public String toString(){
         String output = "";
-        for(Room[] roomarr : rooms){
-            for(Room Room : roomarr){
-                output += Room + " ";
+        for(Tile[] roomarr : tiles){
+            for(Tile Tile : roomarr){
+                output += Tile + " ";
             }
             output += "\n";
         }

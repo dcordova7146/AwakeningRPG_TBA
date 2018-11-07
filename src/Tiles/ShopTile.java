@@ -1,11 +1,11 @@
-package Rooms;
+package Tiles;
+
 import Players.Player;
 
-public class Ambush extends Room{
-
-    public Ambush(int x, int y)
+public class ShopTile extends Tile {
+    public ShopTile(int x, int y)
     {
-       super(x,y);
+        super(x,y);
     }
 
     /**
@@ -18,7 +18,7 @@ public class Ambush extends Room{
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        System.out.println("You Have been ambushed by PLACEHOLDER prepare to fight");
+        System.out.println("You have entered the ShopTile");
     }
 
 }

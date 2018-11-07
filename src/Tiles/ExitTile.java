@@ -1,9 +1,9 @@
-package Rooms;
+package Tiles;
 
 import Game.Runner;
 import Players.Player;
 
-public class ExitTile extends Room
+public class ExitTile extends Tile
 {
 
 	public ExitTile(int x, int y) {

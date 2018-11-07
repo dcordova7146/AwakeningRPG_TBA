@@ -1,9 +1,10 @@
-package Rooms;
+package Tiles;
 
 import Players.Player;
 
-public class Shop extends Room{
-    public Shop(int x, int y)
+public class LuckTile extends Tile {
+
+    public LuckTile(int x, int y)
     {
         super(x,y);
     }
@@ -18,7 +19,6 @@ public class Shop extends Room{
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        System.out.println("You have entered the Shop");
+        System.out.println("A random event is about to occur");
     }
-
 }
