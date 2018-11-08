@@ -79,11 +79,14 @@ public class Enemy implements Battle {
     public int defend(){
         int defendRoll = 0;
         defendRoll = rollDice() + this.defenseMod;
+        System.out.print("The enemy has rolled " + defendRoll + " for defense");
         return defendRoll;
     }
     public int evade(){
         int evadeRoll = 0;
         evadeRoll = rollDice() + this.evadeMod;
+        System.out.print("The enemy has rolled " + evadeRoll + " for evade");
+
         return evadeRoll;
     }
 

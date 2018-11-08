@@ -10,6 +10,7 @@ public class Board {
     public Board(int height,int width ){
         tiles = new Tile[height][width];
     }
+
     public void printBoard(){
         for(Tile[] i : tiles){
             for(Tile j : i){
@@ -28,4 +29,9 @@ public class Board {
         }
         return output;
     }
+    // if(x !== null){
+    //                    return "[@]";
+    //                }else{
+    //                    return "[_]";
+    //                }
 }

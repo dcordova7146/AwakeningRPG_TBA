@@ -43,8 +43,13 @@ public class AmbushTile extends Tile {
 
         while (ded == false || enemyded == false){
             System.out.println("The " + enemy1.enemyName + " slowly moves towards you");
-            System.out.println(myTurn);
-            int eAttackRoll = (int)((Math.random() * 6) + 1) + enemy1.attackMod;
+            System.out.println(enemy1.enemyName + " HP: " + enemy1.healthPoints);
+            System.out.println(x.getPlayerName() +  " HP: " + x.getHealthPoints());
+
+            System.out.println(myTurn + " (if false it is the enemies turn if true it is your turn)");
+            int diceRoll = (int)((Math.random() * 6) + 1);
+            int eAttackRoll = diceRoll + enemy1.attackMod;
+            System.out.println("The enemy rolled a " + diceRoll + "+ (Enemy Attack mod: " + enemy1.attackMod + ") = " + eAttackRoll );
             if(myTurn == false){
                 System.out.println("Do you wish to defend or evade the incoming attack from " + enemy1.enemyName + "!(Press Q for DEFEND, Press E for EVADE)");
             }
@@ -59,6 +64,7 @@ public class AmbushTile extends Tile {
                     if (myTurn == false) {
                         int pDefendRoll = (int) ((Math.random() * 6) + 1) + x.getDefenseMod();
                         int damageTaken = pDefendRoll - eAttackRoll;
+                        System.out.println("You have rolled a " + pDefendRoll + " for defense");
                         if (damageTaken <= 0)
                             damageTaken = 1;
                         x.setHealthPoints(x.getHealthPoints() - damageTaken);
@@ -74,12 +80,15 @@ public class AmbushTile extends Tile {
 
                     } else if(myTurn == true){
                         System.out.println("The enemy hasnt even swung yet what are you doing, it is your turn to run his fade!");
+                        break;
                     }
                 case "e":
                     if (myTurn == false) {
                         int pEvadeRoll = (int) ((Math.random() * 6) + 1) + x.getEvadeMod();
+                        System.out.println("You have rolled a " + pEvadeRoll + " for evade");
                         if (pEvadeRoll > eAttackRoll) {
-                            System.out.println("You were able to avoid the attack!");
+                            System.out.println("You were able to avoid the attack!(Since your evade roll was higher than the enemies attack roll");
+                            break;
                         } else if (pEvadeRoll <= eAttackRoll) {
                             int damageTaken = eAttackRoll;
                             x.setHealthPoints(x.getHealthPoints() - damageTaken);
@@ -94,14 +103,17 @@ public class AmbushTile extends Tile {
                         }
                     } else if(myTurn == true){
                         System.out.println("The enemy hasnt even swung yet what are you doing, it is your turn to run his fade!");
+                        break;
                     }
                 case "f":
                     if(myTurn == true){
                         int pAttackRoll = (int)((Math.random() * 6) + 1) + x.getAttackMod();
+                        System.out.println("You have rolled a "+ pAttackRoll + " for attack");
                         enemy1.setHealthPoints(enemy1.getHealthPoints() - enemy1.cpu(pAttackRoll));
                         if(enemy1.getHealthPoints() <= 0){
                             System.out.println("You have murdered a defenseless " + enemy1.enemyName + "!");
                             leaveRoom(x);
+                            break;
                         }
                         if(enemy1.getHealthPoints() >= 1){
                             System.out.println("You have severely damaged " + enemy1.enemyName + "!");

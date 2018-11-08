@@ -34,5 +34,13 @@ public class Tile {
 		occupant = null;
 	}
 
-
+	@Override
+	public String toString(){
+		if(occupant != null){
+			return("X");
+		}else{
+				return ("0");
+		}
+	}
 }
+
