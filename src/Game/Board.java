@@ -22,8 +22,8 @@ public class Board {
     public String toString(){
         String output = "";
         for(Tile[] roomarr : tiles){
-            for(Tile Tile : roomarr){
-                output += Tile + " ";
+            for(Tile tile : roomarr){
+                output += tile + " ";
             }
             output += "\n";
         }
