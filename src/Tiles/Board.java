@@ -1,9 +1,7 @@
-package Game;
-
-import Tiles.Tile;
+package Tiles;
 
 public class Board {
-    private Tile[][] tiles;
+    Tile[][] tiles;
     public Board(Tile[][] tiles){
         this.tiles = tiles;
     }
@@ -29,9 +27,18 @@ public class Board {
         }
         return output;
     }
-    // if(x !== null){
-    //                    return "[@]";
-    //                }else{
-    //                    return "[_]";
-    //                }
+   public Tile getTile(int x, int y){
+        return tiles[x][y];
+   }
+
+    public void setTiles(Tile[][] tiles) {
+        this.tiles = tiles;
+    }
+    public Tile[] getTileRow(int x){
+        return tiles[x];
+    }
+    public int getHeight() {
+        return tiles.length;
+    }
+
 }

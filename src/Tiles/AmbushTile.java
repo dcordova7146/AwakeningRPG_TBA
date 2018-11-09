@@ -41,7 +41,7 @@ public class AmbushTile extends Tile {
         boolean enemyded = false;
         boolean myTurn = false;
 
-        while (ded == false || enemyded == false){
+        while (enemyded == false){
             System.out.println("The " + enemy1.enemyName + " slowly moves towards you");
             System.out.println(enemy1.enemyName + " HP: " + enemy1.healthPoints);
             System.out.println(x.getPlayerName() +  " HP: " + x.getHealthPoints());
@@ -96,6 +96,7 @@ public class AmbushTile extends Tile {
                             if(x.getHealthPoints() <= 0){
                                 System.out.println("You have died");
                                 ded = true;
+                                break;
                             }
                             System.out.println("Your remaining health is " + x.getHealthPoints() + ".");
                             myTurn = true;
@@ -112,7 +113,7 @@ public class AmbushTile extends Tile {
                         enemy1.setHealthPoints(enemy1.getHealthPoints() - enemy1.cpu(pAttackRoll));
                         if(enemy1.getHealthPoints() <= 0){
                             System.out.println("You have murdered a defenseless " + enemy1.enemyName + "!");
-                            leaveRoom(x);
+                            enemyded = true;
                             break;
                         }
                         if(enemy1.getHealthPoints() >= 1){
